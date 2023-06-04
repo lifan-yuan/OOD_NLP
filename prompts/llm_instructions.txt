@@ -1,0 +1,308 @@
+{
+    "zero-shot": {
+        "SentimentAnalysis": r"""
+            ### Instruction ###
+            Solve the sentiment analysis task. Options for sentiment: negative, positive, neutral.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "ToxicDetection": r"""
+            ### Instruction ###
+            Solve the toxic detection task. Options for toxicity: benign, toxic.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "NaturalLanguageInference": r"""
+            ### Instruction ###
+            Solve the NLI task. Options for entailment relationship: entailment, neutral, contradiction.
+            ### Format ###
+            Premise: {{Premise}} // Hypothesis: {{Hypothesis}} // Prediction: {{Prediction}}
+            ### Input ###
+            Premise: {0} // Hypothesis: {1} // Prediction: 
+            """,
+        "NameEntityRecognition": {
+            "conll": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location and Miscellaneous entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "ener": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location and Miscellaneous entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "fewnerd": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location, Miscellaneous, Building, Art, Product, and Event entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None || Building: None || Art: Word 3 || Product: None || Event: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "wnut": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location, Art, and Product entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Art: Word 3 || Product: None
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+        },
+        "QuestionAnswering": r"""
+            ### Instruction ###
+            Solve the extractive question answering task. Refering to the passage below and extract answer for the question. The answer should be the shortest phrase as it can be.
+            ### Format ###
+            Passage: {{Passage}} // Question: {{Question}} // Answer: {{Answer}}.
+            ### Input ###
+            Passage: {0} // Question: {1} // Answer: 
+            """,
+    },
+
+    "in-context": {
+        "SentimentAnalysis": r"""
+            ### Instruction ###
+            Solve the sentiment analysis task. Options for sentiment: negative, positive, neutral.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: only lasted 7 months and had to replace again // Prediction: negative
+            Text: Appears to be excellent quality. Haven't used yet. // Prediction: positive
+            Text: There aren't many veggie chips in the bag but they are very tasty. // Prediction: neutral
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "ToxicDetection": r"""
+            ### Instruction ###
+            Solve the toxic detection task. Options for toxicity: benign, toxic.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: Headline is accurate. Not sure how your arrived at the 7 year number. He's been an Alaskan since 1986, save for the time he was in college. He's worked in state government for nearly 20 years but the last two working for Sen. Sullivan required him to move to the D.C. area. // Prediction: benign
+            Text: Never heard of this person and I'm sure the majority haven't either. Once her little following of \"woke\" teenagers grow up and realize social justice is a stupid fad she'll be waiting in the bread line along with her communist friends. // Prediction: toxic
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "NaturalLanguageInference": r"""
+            ### Instruction ###
+            Solve the NLI task. Options for entailment relationship: entailment, neutral, contradiction.
+            ### Format ###
+            Premise: {{Premise}} // Hypothesis: {{Hypothesis}} // Prediction: {{Prediction}}
+            ### Example ###
+            Premise: As the roc swept over, the people stopped their frenzied pursuit of sensation and ran for weapons. // Hypothesis: As the roc swept over, people ran to grab weapons. // Prediction: entailment
+            Premise: What they do know, however, is that men's chins have been getting larger over the last 200 generations. // Hypothesis: They were trying to figure out why the chins were getting bigger. // Prediction: neutral
+            Premise: With the passing of each year, the Space Needle looks more and more like a prop from a bad science-fiction movie. // Hypothesis: The Space Needle has been updated and modernized. // Prediction: contradiction
+            ### Input ###
+            Premise: {0} // Hypothesis: {1} // Prediction: 
+            """,
+        "NameEntityRecognition": {
+            "conll": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location and Miscellaneous entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None.
+                ### Example ###
+                Text: In late August 2013 , Dyakov put pen to paper on a short-term contract with newly promoted A PFG club Lyubimets 2007 . // Entity: Organization: A PFG, Lyubimets || Person: Dyakov || Location: None || Miscellaneous: None.
+                Text: An inventory of medium and large mammals in the park confirmed the presence of 30 species in Saguaro National Park between 1999 and 2008 . // Entity: Organization: None || Person: None || Location: Saguaro National Park || Miscellaneous: None.
+                Text: It is a candidate Lambda Boötis star , suggesting it may have accreted low-metallicity circumstellar gas some time in the past . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: Lambda Boötis star.
+                Text: In July 2015 , it was reported that the construction budget for the Performing Arts Center was to be reduced from $ 350 million to $ 200 million . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                Text: With a new line-up , the album `` Better off Dead `` was released in 1990 . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                Text: was a pet simulation game released in Japan for the Game Boy Color in 2000 . // Entity: Organization: None || Person: None || Location: Japan || Miscellaneous: None.
+                Text: In the Latvian Cup they also lost three cup finals . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "ener": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location and Miscellaneous entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None.
+                ### Example ###
+                Text: In late August 2013 , Dyakov put pen to paper on a short-term contract with newly promoted A PFG club Lyubimets 2007 . // Entity: Organization: A PFG, Lyubimets || Person: Dyakov || Location: None || Miscellaneous: None.
+                Text: An inventory of medium and large mammals in the park confirmed the presence of 30 species in Saguaro National Park between 1999 and 2008 . // Entity: Organization: None || Person: None || Location: Saguaro National Park || Miscellaneous: None.
+                Text: It is a candidate Lambda Boötis star , suggesting it may have accreted low-metallicity circumstellar gas some time in the past . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: Lambda Boötis star.
+                Text: In July 2015 , it was reported that the construction budget for the Performing Arts Center was to be reduced from $ 350 million to $ 200 million . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                Text: With a new line-up , the album `` Better off Dead `` was released in 1990 . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                Text: was a pet simulation game released in Japan for the Game Boy Color in 2000 . // Entity: Organization: None || Person: None || Location: Japan || Miscellaneous: None.
+                Text: In the Latvian Cup they also lost three cup finals . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "fewnerd": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location, Miscellaneous, Building, Art, Product, and Event entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None || Building: None || Art: Word 3 || Product: None || Event: None.
+                ### Example ###
+                Text: In late August 2013 , Dyakov put pen to paper on a short-term contract with newly promoted A PFG club Lyubimets 2007 . // Entity: Organization: A PFG, Lyubimets || Person: Dyakov || Location: None || Miscellaneous: None || Building: None || Art: None || Product: None || Event: None.
+                Text: An inventory of medium and large mammals in the park confirmed the presence of 30 species in Saguaro National Park between 1999 and 2008 . // Entity: Organization: None || Person: None || Location: Saguaro National Park || Miscellaneous: None || Building: None || Art: None || Product: None || Event: None.
+                Text: It is a candidate Lambda Boötis star , suggesting it may have accreted low-metallicity circumstellar gas some time in the past . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: Lambda Boötis star || Building: None || Art: None || Product: None || Event: None.
+                Text: In July 2015 , it was reported that the construction budget for the Performing Arts Center was to be reduced from $ 350 million to $ 200 million . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None || Building: Performing Arts Center || Art: None || Product: None || Event: None.
+                Text: With a new line-up , the album `` Better off Dead `` was released in 1990 . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None || Building: None || Art: Better off Dead || Product: None || Event: None.
+                Text: was a pet simulation game released in Japan for the Game Boy Color in 2000 . // Entity: Organization: None || Person: None || Location: Japan || Miscellaneous: None || Building: None || Art: None || Product: Game Boy Color || Event: None.
+                Text: In the Latvian Cup they also lost three cup finals . // Entity: Organization: None || Person: None || Location: None || Miscellaneous: None || Building: None || Art: None || Product: None || Event: Latvian Cup.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+            "wnut": r"""
+                ### Instruction ###
+                Solve the NER task, identifying the Organization, Person, Location, Art, and Product entities from given text.
+                ### Format ###
+                Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Art: Word 3 || Product: None
+                ### Example ###
+                Text: In late August 2013 , Dyakov put pen to paper on a short-term contract with newly promoted A PFG club Lyubimets 2007 . // Entity: Organization: A PFG, Lyubimets || Person: Dyakov || Location: None || Art: None || Product: None.
+                Text: An inventory of medium and large mammals in the park confirmed the presence of 30 species in Saguaro National Park between 1999 and 2008 . // Entity: Organization: None || Person: None || Location: Saguaro National Park || Art: None || Product: None.
+                Text: It is a candidate Lambda Boötis star , suggesting it may have accreted low-metallicity circumstellar gas some time in the past . // Entity: Organization: None || Person: None || Location: None || Art: None || Product: None.
+                Text: In July 2015 , it was reported that the construction budget for the Performing Arts Center was to be reduced from $ 350 million to $ 200 million . // Entity: Organization: None || Person: None || Location: None ||| Art: None || Product: None.
+                Text: With a new line-up , the album `` Better off Dead `` was released in 1990 . // Entity: Organization: None || Person: None || Location: None || Art: Better off Dead || Product: None.
+                Text: was a pet simulation game released in Japan for the Game Boy Color in 2000 . // Entity: Organization: None || Person: None || Location: Japan || Art: None || Product: Game Boy Color.
+                Text: In the Latvian Cup they also lost three cup finals . // Entity: Organization: None || Person: None || Location: None || Art: None || Product: None.
+                ### Input ###
+                Text: {0} // Entity: 
+                """,
+        },
+        "QuestionAnswering": r"""
+            ### Instruction ###
+            Solve the extractive question answering task. Refering to the passage below and extract answer for the question. The answer should be the shortest phrase as it can be.
+            ### Format ###
+            Passage: {{Passage}} // Question: {{Question}} // Answer: {{Answer}}.
+            ### Example ###
+            Passage: Everton F.C. is a limited company with the board of directors holding a majority of the shares. The club\'s most recent accounts, from May 2014, show a net total debt of £28.1 million, with a turnover of £120.5 million and a profit of £28.2 million. The club\'s overdraft with Barclays Bank is secured against the Premier League\'s "Basic Award Fund", a guaranteed sum given to clubs for competing in the Premier League. Everton agreed a long-term loan of £30 million with Bear Stearns and Prudential plc in 2002 over the duration of 25 years; a consolidation of debts at the time as well as a source of capital for new player acquisitions. Goodison Park is secured as collateral. // Question: How long does Everton FC have to pay back £30 million they borrowed from Bear Stearns and Prudential? // Answer: 25 years.
+            ### Input ###
+            Passage: {0} // Question: {1} // Answer: 
+            """,
+    },
+    
+    "ood-in-context":{
+        "dynasent":r"""
+            ### Instruction ###
+            Solve the sentiment analysis task. Options for sentiment: negative, positive, neutral.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: I've been here for dine-in and take out and bad experiences both times. // Prediction: negative
+            Text: I remember going to this place back in 2014 and loved the food, the price and the portions. // Prediction: positive
+            Text: There is a good chance that I will do the repair since I already used your services earlier. // Prediction: neutral
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "semeval":r"""
+            ### Instruction ###
+            Solve the sentiment analysis task. Options for sentiment: negative, positive, neutral.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: David Beckham as James Bond may just be the worst idea I've ever heard in my life // Prediction: negative
+            Text: #LinuxCon attendees, join IBM in the Cedar Room in 15 minutes for a \"Linux Without Limits\" meetup (includes lunch): http://t.co/q5XYwe8Bkd // Prediction: positive
+            Text: SpeedeNews: Rumor: Android Wear will soon work with iOS - Android Wear may be very close to working with iOS. That... http://t.co/pq0g0Z3eOy // Prediction: neutral
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        "sst5":r"""
+            ### Instruction ###
+            Solve the sentiment analysis task. Options for sentiment: negative, positive, neutral.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: It 's a stale , overused cocktail using the same olives since 1962 as garnish . // Prediction: negative
+            Text: It 's a great American adventure and a wonderful film to bring to IMAX . // Prediction: positive
+            Text: What makes the movie work -- to an admittedly limited extent -- is the commitment of two genuinely engaging performers . // Prediction: neutral
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+
+        "toxigen":r"""
+            ### Instruction ###
+            Solve the toxic detection task. Options for toxicity: benign, toxic.
+            ### Format ###
+            Text: {{Text}} // Prediction: {{Prediction}}
+            ### Example ###
+            Text: the british knew that large american cities such as virginia were a prime target during the revolutionary war // Prediction: benign
+            Text: If somebody has a physical disability they are unpredictable and should not be allowed near sharp objects // Prediction: toxic
+            ### Input ###
+            Text: {0} // Prediction: 
+            """,
+        
+        "anli":r"""
+            ### Instruction ###
+            Solve the NLI task. Options for entailment relationship: entailment, neutral, contradiction.
+            ### Format ###
+            Premise: {{Premise}} // Hypothesis: {{Hypothesis}} // Prediction: {{Prediction}}
+            ### Example ###
+            Premise: At the time, neither \"USA Today\" nor \"The Observer\" was able to verify which of the sixty-plus candidates it was. // Hypothesis: It says that they could not verify it // Prediction: entailment
+            Premise: Cyprus International Football Tournaments is annual winter association football friendly competition for national teams that take place in Cyprus. Traditionally held in February as a friendly tournament since at least 1997. Played in two parallel groups in 2006. // Hypothesis: the agent is aged 37 // Prediction: neutral
+            Premise: Ugly Cat<br>Tom noticed a stray cat. It was really ugly. Tom went to pet it anyway. The cat was super friendly and nice. Tom decided to keep it as a pet. // Hypothesis: Tom contains a x // Prediction: contradiction
+            ### Input ###
+            Premise: {0} // Hypothesis: {1} // Prediction: 
+            """,
+        "wanli":r"""
+            ### Instruction ###
+            Solve the NLI task. Options for entailment relationship: entailment, neutral, contradiction.
+            ### Format ###
+            Premise: {{Premise}} // Hypothesis: {{Hypothesis}} // Prediction: {{Prediction}}
+            ### Example ###
+            Premise: By the time the boys reached the fire, the wind had already taken the roof off the house. // Hypothesis: The wind had destroyed the house. // Prediction: entailment
+            Premise: \"I don't know what I'm doing,\" she said. \"I'm just trying to be a good person.\" // Hypothesis: She is not a good person. // Prediction: neutral
+            Premise: The two brothers, then, must have been in their early twenties. // Hypothesis: The two brothers were younger than 20. // Prediction: contradiction
+            ### Input ###
+            Premise: {0} // Hypothesis: {1} // Prediction: 
+            """,
+
+        "conll":r"""
+            ### Instruction ###
+            Solve the NER task, identifying the Organization, Person, Location and Miscellaneous entities from given text.
+            ### Format ###
+            Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Miscellaneous: None.
+            ### Example ###
+            Text: The previous mark of 26:43.53 was set by Ethiopia 's Haile Gebreselassie in the Dutch town of Hengelo in June last year . // Entity: Organization: None || Person: Haile Gebreselassie || Location: Ethiopia, Hengelo || Miscellaneous: Dutch.
+            Text: -- U.S. Municipal Desk , 212-859-1650 // Entity: Organization: U.S. Municipal Desk || Person: None || Location: None || Miscellaneous: None.
+            ### Input ###
+            Text: {0} // Entity: 
+            """,
+        "wnut":r"""
+            ### Instruction ###
+            Solve the NER task, identifying the Organization, Person, Location, Art, and Product entities from given text.
+            ### Format ###
+            Text: {{Text}} // Entity: Organization: None || Person: Word1 || Location: Word6, Word7 || Art: Word 3 || Product: None
+            ### Example ###
+            Text: Good golly . Who left the candy in the lunchroom . May set a world record for the most Sour Patch kids eaten by an individual ! // Entity: Organization: None || Person: None || Location: None || Art: None || Product: Sour Patch kids.
+            Text: I HATE MY MOTHER !!!!!!!!!!!... Where is Dee when I need him // Entity: Organization: None || Person: Dee || Location: None || Art: None || Product: None.
+            Text: back from Verona :) Looking forward to come back in Paris next week . We plan a drink together friends ? // Entity: Organization: None || Person: None || Location: Verona, Paris || Art: None || Product: None.
+            Text: RT @CBSSports : Aaron Rodgers SILENCING the 12th man ... http://t.co/DeSTxJdwvx // Entity: Organization: None || Person: Aaron Rodgers || Location: None || Art: None || Product: None.
+            Text: I may have an extra ticket for the Jonas Bros this Sunday , if anyone wants it or wants me to take ur kiddo w/me :) // Entity: Organization: Jonas Bros || Person: None || Location: None || Art: None || Product: None.
+            Text: Ahhhh ! Omg . Just saw a preview for episode one of season six of Criminal Minds ! Can't wait for next week ! // Entity: Organization: None || Person: None || Location: None || Art: Criminal Minds || Product: None.
+            ### Input ###
+            Text: {0} // Entity: 
+            """,
+
+        "advqa":r"""
+            ### Instruction ###
+            Solve the extractive question answering task. Refering to the passage below and extract answer for the question. The answer should be the shortest phrase as it can be.
+            ### Format ###
+            Passage: {{Passage}} // Question: {{Question}} // Answer: {{Answer}}.
+            ### Example ###
+            Passage: The northeastern Puntland region has around six private radio stations, including Radio Garowe, Radio Daljir, Radio Codka-Nabbada and Radio Codka-Mudug. Radio Gaalkacyo, formerly known as Radio Free Somalia, operates from Galkayo in the north-central Mudug province. Additionally, the Somaliland region in the northwest has one government-operated radio station. // Question: Hassan Moalim is chairman of the __ Party. // Answer: Daljir.
+            ### Input ###
+            Passage: {0} // Question: {1} // Answer: 
+            """,
+        "newsqa":r"""
+            ### Instruction ###
+            Solve the extractive question answering task. Refering to the passage below and extract answer for the question. The answer should be the shortest phrase as it can be.
+            ### Format ###
+            Passage: {{Passage}} // Question: {{Question}} // Answer: {{Answer}}.
+            ### Example ###
+            Passage: TOKYO, Japan (CNN) -- Typhoon Melor roared into central Japan on Thursday, leaving two people dead and lashing the region with heavy rain and gusty winds.\n\n\n\nUtility poles lie buckled in the wake of Typhoon Melor.\n\n\n\nThe storm stayed west of Tokyo, but still caused enough trouble to shut down trains for a time and snarl commuter traffic. Numerous flights were canceled and delayed at the city's two major airports.\n\n\n\nIn western and northern  Japan, Melor tore roofs off homes, downed power lines and flooded roads.\n\n\n\nThe storm contributed to the deaths of a 54-year-old newspaper delivery man in Wakayama, who ran into a fallen tree, and a 69-year-old man from Saitama, who was crushed by a tree.\n\n\n\nBy late Thursday, Melor had weakened to a tropical storm and was heading out to sea.\n\n\n\n-- CNN's Kyung Lah contributed to this report. // Question: What did the storm avoid? // Answer: Tokyo.
+            ### Input ###
+            Passage: {0} // Question: {1} // Answer: 
+            """,
+    }
+}

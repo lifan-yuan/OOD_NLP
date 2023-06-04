@@ -1,0 +1,1 @@
+only lasted 7 months and had to replace again All in all , the sentiment was negative .\nAppears to be excellent quality. Haven't used yet. All in all , the sentiment was positive .\nThere aren't many veggie chips in the bag but they are very tasty. All in all , the sentiment was neutral .\n{"placeholder": "text_a"} All in all , the sentiment was {"mask"} .

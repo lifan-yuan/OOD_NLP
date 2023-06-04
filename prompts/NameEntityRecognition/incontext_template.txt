@@ -1,0 +1,1 @@
+ner text:  Santee Cooper provided many rural areas of the state with electricity and was a catalyst for economic development in South Carolina . label: Organization: Santee Cooper || Person: None || Location: South Carolina || Miscellaneous: None || Building: None || Art: None || Product: None || Event: None.\nner text: {"placeholder": "text_a"} label: {"mask"}

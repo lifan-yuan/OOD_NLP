@@ -1,0 +1,8 @@
+Extract the answer to the question from the following context.
+Question: How long does Everton FC have to pay back £30 million they borrowed from Bear Stearns and Prudential?
+Context: Everton F.C. is a limited company with the board of directors holding a majority of the shares. The club\'s most recent accounts, from May 2014, show a net total debt of £28.1 million, with a turnover of £120.5 million and a profit of £28.2 million. The club\'s overdraft with Barclays Bank is secured against the Premier League\'s "Basic Award Fund", a guaranteed sum given to clubs for competing in the Premier League. Everton agreed a long-term loan of £30 million with Bear Stearns and Prudential plc in 2002 over the duration of 25 years; a consolidation of debts at the time as well as a source of capital for new player acquisitions. Goodison Park is secured as collateral.|||
+Answer: 25 years.
+
+Question: {{question}}
+Context: {{context}}|||
+Answer: 

@@ -1,0 +1,4 @@
+Extract the answer to the question from the following context.
+Question: {{question}}
+Context: {{context}}|||
+Answer: 

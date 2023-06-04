@@ -1,0 +1,1 @@
+Given the two sentences: (1) {"placeholder": "text_a"}. (2) {"placeholder": "text_b"}. Does the first sentence entail the second ? {"mask"}.
