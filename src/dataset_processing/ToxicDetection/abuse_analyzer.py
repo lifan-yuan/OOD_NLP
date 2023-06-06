@@ -34,27 +34,8 @@ def read_data(path):
 abuse_analyzer = read_data("./datasets/raw/ToxicDetection/abuse_analyzer/AbuseAnalyzer_Dataset.tsv")
 random.shuffle(abuse_analyzer)
 
-
-## cross evaluation ##
 # split
-train_len = int(0.8 * len(abuse_analyzer))
-train, test = abuse_analyzer[:train_len], abuse_analyzer[train_len:]
-labels = np.array([data["label"] for data in train])
-
-# compute max_length
-max_length = max(
-                np.sum(np.where(labels==0, np.ones((train_len,)), np.zeros((train_len,)))),
-                np.sum(np.where(labels==1, np.ones((train_len,)), np.zeros((train_len,)))),
-                )
-print("max length:", max_length)
-label_count = {0:0, 1:0}
-    
-# train
-train_dataset = []
-for data in train:
-    if label_count[data["label"]] < max_length:
-        train_dataset.append((data["text"], data["label"]))
-        label_count[data["label"]] += 1
+test = abuse_analyzer
 
 # test
 test_dataset = []
@@ -62,5 +43,4 @@ for data in test:
     test_dataset.append((data["text"], data["label"]))
 
 # save
-save_data(train_dataset, "./datasets/process/ToxicDetection/abuse_analyzer", "train")
 save_data(test_dataset, "./datasets/process/ToxicDetection/abuse_analyzer", "test")

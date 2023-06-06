@@ -29,7 +29,6 @@ train_dataset = []
 for data in train:
     train_dataset.append((data["premise"], data["hypothesis"], data["label"]))
 
-
 # test
 test_dataset = []
 for data in test:
@@ -37,5 +36,4 @@ for data in test:
 
 test_dataset.extend(train_dataset)
 # save
-# save_data(train_dataset, "./datasets/process/NaturalLanguageInference/cb", "train")
 save_data(test_dataset, "./datasets/process/NaturalLanguageInference/cb", "test")

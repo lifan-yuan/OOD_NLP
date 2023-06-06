@@ -56,34 +56,7 @@ def read_data(path):
 # load and shuffle
 ener =  read_data("./datasets/raw/NameEntityRecognition/ener/edgar_all_4.csv").map(label_process).shuffle(0)
 
-
-# # split
-# train_len = int(0.8 * len(ener))
-# train, test = ener.select([i for i in range(len(ener))][:train_len]), ener.select([i for i in range(len(ener))][train_len:])
-
-# # train
-# train_dataset = []
-# for data in train:
-#     sentence = []
-#     for token, tag in zip(data["tokens"], data["tags"]):
-#         sentence.append((token, tag))
-#     train_dataset.append(sentence)
-
-# # test
-# test_dataset = []
-# for data in test:
-#     sentence = []
-#     for token, tag in zip(data["tokens"], data["tags"]):
-#         sentence.append((token, tag))
-#     test_dataset.append(sentence)
-
-# save_ner_data(train_dataset, "./datasets/process/NameEntityRecognition/ener", "train")
-# save_ner_data(test_dataset, "./datasets/process/NameEntityRecognition/ener", "test")
-
-
-
-
-# # split
+# split
 test = ener
 
 # test

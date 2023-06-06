@@ -22,15 +22,8 @@ dataset = load_from_disk("./datasets/raw/ToxicDetection/civil_comments").shuffle
 # split
 train, test = dataset["train"].map(text_process).map(label_process), dataset["test"].map(text_process).map(label_process)
 
-# compute max_length
-train_len = len(train)
-############# Sample #############
-# max_length = max(
-#                 np.sum(np.where(train["label"]==0, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(train["label"]==1, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 )
+# manually set max_length
 max_length = 30000
-##################################
 print("max length:", max_length)
 label_count = {0:0, 1:0}
 

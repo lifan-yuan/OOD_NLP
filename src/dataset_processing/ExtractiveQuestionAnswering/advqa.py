@@ -2,7 +2,6 @@ import json
 from datasets import Dataset
 
 for split in ["train", "dev"]:
-# for dataset_name in ["1_dbidaf"]:
     with open(f"./datasets/raw/QuestionAnswering/adversarialQA/combined/{split}.json", "r") as f:
         dataset = json.load(f)
 

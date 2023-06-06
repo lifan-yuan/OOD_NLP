@@ -24,13 +24,7 @@ dataset = load_from_disk("./datasets/raw/NaturalLanguageInference/wanli").map(te
 # split
 train, test = dataset["train"], dataset["test"]
 
-# compute max_length
-train_len = len(train)
-max_length = 40000
-label_count = {0:0, 1:0, 2:0}
-
-
-# # train
+# train
 train_dataset = []
 for data in train:
     train_dataset.append((data["premise"], data["hypothesis"], data["label"]))

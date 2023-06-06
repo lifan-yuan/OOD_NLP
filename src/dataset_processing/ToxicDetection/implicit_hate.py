@@ -33,39 +33,12 @@ base_path = "./datasets/raw/ToxicDetection/implicit-hate/implicit-hate-corpus"
 implicit_hate = read_data(f"{base_path}/implicit_hate_v1_stg1_posts.tsv")
 random.shuffle(implicit_hate)
 
-# # split
-# train_len = int(0.8 * len(implicit_hate))
-# train, test = implicit_hate[:train_len], implicit_hate[train_len:]
-# labels = np.array([data["label"] for data in train])
+# split
+test = implicit_hate
 
-# # compute max_length
-# max_length = max(
-#                 np.sum(np.where(labels==0, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(labels==1, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 )
-# print("max length:", max_length)
-# label_count = {0:0, 1:0}
-    
-# # train
-# train_dataset = []
-# for data in train:
-#     if label_count[data["label"]] < max_length:
-#         train_dataset.append((data["text"], data["label"]))
-#         label_count[data["label"]] += 1
-
-# # test
-# test_dataset = []
-# for data in test:
-#     test_dataset.append((data["text"], data["label"]))
-
-# # save
-# save_data(train_dataset, "./datasets/process/ToxicDetection/implicit_hate", "train")
-# save_data(test_dataset, "./datasets/process/ToxicDetection/implicit_hate", "test")
-
-
-# # test
+# test
 test_dataset = []
-for data in implicit_hate:
+for data in test:
     test_dataset.append((data["text"], data["label"]))
 
 # save

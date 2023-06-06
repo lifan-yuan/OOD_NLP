@@ -19,8 +19,6 @@ def save_data(dataset, path, split):
         header = ["Text", "Label"]
     elif len(dataset[0]) == 3:
         header = ["Premise", "Hypothesis", "Label"]
-    # elif len(dataset[0]) == 4:
-    #     header = ["Context", "Question", "Option", "Label"]
     df = pd.DataFrame(dataset, columns=header)
     os.makedirs(path, exist_ok=True)
     df.to_csv(f"{path}/{split}.tsv", sep="\t", index=False, header=header)

@@ -89,7 +89,7 @@ Citation:
 
 Paper: [Latent Hatred: A Benchmark for Understanding Implicit Hate Speech](https://arxiv.org/abs/2109.05322v1)
 
-Dataset Link: [Github](https://www.dropbox.com/s/24meryhqi1oo0xk/implicit-hate-corpus-nov-2021.zip?dl=0)
+Dataset Link: [Github](https://github.com/SALT-NLP/implicit-hate)
 
 Citation:
 ```

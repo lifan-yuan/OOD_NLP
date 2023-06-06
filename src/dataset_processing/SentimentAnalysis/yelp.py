@@ -27,14 +27,7 @@ dataset = dataset.map(text_process).map(label_process).shuffle(0)
 train, test = dataset["train"], dataset["test"]
 labels = np.array(train["label"])
 
-# compute max_length
-# train_len = len(train)
-# max_length = max(
-#                 np.sum(np.where(labels==0, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(labels==1, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(labels==2, np.ones((train_len,)), np.zeros((train_len,))))
-#                 )
-# print("max length:", max_length)
+# manually set max_length
 max_length = 10000
 label_count = {0:0, 1:0, 2:0}
 

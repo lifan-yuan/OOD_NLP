@@ -54,13 +54,7 @@ train_len = int(0.9 * len(amazon))
 train, test = amazon[:train_len], amazon[train_len:]
 labels = np.array([data["label"] for data in train])
 
-# compute max_length
-# max_length = max(
-#                 np.sum(np.where(labels==0, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(labels==1, np.ones((train_len,)), np.zeros((train_len,)))),
-#                 np.sum(np.where(labels==2, np.ones((train_len,)), np.zeros((train_len,))))
-#                 )
-# print("max length:", max_length)
+# manually set max_length
 max_length = 10000
 label_count = {0:0, 1:0, 2:0}
 
