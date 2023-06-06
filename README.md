@@ -6,7 +6,7 @@ Our OOD benchmark covers five representative NLP tasks, including one ID dataset
 
 **Note**: As required by the authors, you should first fill the forms to access Implicit Hate [[form]](https://forms.gle/QxCpEbVp91Z35hWFA) and ToxiGen [[form]](https://forms.office.com/r/r6VXX8f8vh). Link to their official repositories: [Implicit Hate](https://github.com/SALT-NLP/implicit-hate); [ToxiGen](https://github.com/microsoft/TOXIGEN).
 
-# Dataset Seelction
+# Dataset Selection
 We select the datasets based on three principles:
 1. The ID dataset should provide sufficient knowledge for models to handle the task.
 2. Datasets within a given task should originate from diverse distributions for a holistic evaluation.
