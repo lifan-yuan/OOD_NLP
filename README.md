@@ -34,8 +34,14 @@ We also evaluate the effectiveness of existing robustness-enhanced methods and t
 
 Note that the evaluation for `davinci3` (text-davinci-003) and `turbo` (gpt-3.5-turbo) requires OpenAI API key, so you should first set your key in `./api.key` beforehand. Run `echo YOUR_KEY > ./api.key` or directly enter your key in the first line of `./api.key`.
 
-<!-- # Citation
-If you find our code or data useful, please cite our paper:
-```
+## Citation
+Please kindly cite our paper:
 
-``` -->
+```
+@article{yuan2023revisiting,
+      title={Revisiting Out-of-distribution Robustness in NLP: Benchmark, Analysis, and LLMs Evaluations}, 
+      author={Yuan, Lifan and Chen, Yangyi and Cui, Ganqu and Gao, Hongcheng and Zou, Fangyuan and Cheng, Xingyi and Ji, Heng and Liu, Zhiyuan and Sun, Maosong},
+      journal={arXiv preprint arXiv:2306.04618},
+      year={2023}
+}
+```
