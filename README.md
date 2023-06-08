@@ -1,4 +1,4 @@
-This reposition contains code and data for paper "[Revisiting Out-of-distribution Robustness in NLP: Benchmarks, Analysis, and LLMs Evaluations](https://openreview.net/forum?id=zQU33Uh3qM)".
+This reposition contains code and data for paper "[Revisiting Out-of-distribution Robustness in NLP: Benchmarks, Analysis, and LLMs Evaluations](https://arxiv.org/abs/2306.04618)".
 
 # Datasets
 
